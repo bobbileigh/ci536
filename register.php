@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (empty($fname) || empty($sname) || empty($email) || empty($password) || empty($confirm_password)) {
         $error = "Please fill in all fields.";
         //Only uni emails can register
-    } elseif (!preg_match('/@.*\.ac\.uk$/', $email)) {
-        $error = "You must register with a university email address (ending in .ac.uk).";
+    } elseif (!preg_match('/@uni\.brighton\.ac\.uk$/i', $email)) {
+    $error = "You must register with your student email address. (ending in @uni.brighton.ac.uk).Sorry only Uni of Brighton Students!";
     } elseif ($password !== $confirm_password) {
         $error = "Passwords do not match.";
     } else {
@@ -58,13 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <input type="text" name="fname" placeholder="First Name" required>
     <input type="text" name="sname" placeholder="Surname" required></div>
         <div><input type="email" name="email" placeholder="Email" required></div>
-        <div><select name="university" required>
-            <option value="">Select your university</option>
-            <<option value="University of Brighton">University of Brighton</option>
-            <option value="University of Sussex">University of Sussex</option>
-            <option value="BIMM">BIMM</option>
-            <option value="BSMS">BSMS</option>
-    </select></div>
         <div><input type="password" name="password" placeholder="Password" required></div>
         <div><input type="password" name="confirm_password" placeholder="Confirm Password" required></div>
         <button type="submit">Sign Up</button>
