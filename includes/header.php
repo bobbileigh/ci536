@@ -15,7 +15,7 @@
     </header>
     <nav>
         <ul>
-            <li><a href="../index.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="listings.php">Listings</a></li>
             <li><a href="social.php">Social</a></li>
             <li><a href="profile.php">Profile</a></li>
